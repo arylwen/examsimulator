@@ -31,6 +31,7 @@ export default win => {
           const filename = filepaths[0].split('\\').pop()
           // path to application data directory
           const dstFilepath = path.join(EXAM_DIR_PATH, filename)
+          console.log('exam dir path: ', EXAM_DIR_PATH)
           // read contents of new exam file
           const data = await readFile(filepaths[0])
           // validate JSON against predefined schema
