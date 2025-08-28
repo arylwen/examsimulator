@@ -10,48 +10,75 @@ Exam files use the `.json` extension. _JSON_, or _JavaScript Object Notation_ is
 
 ### Example Exam File
 
-{% code-tabs %}
-{% code-tabs-item title="exam.json" %}
 ```javascript
 {
-    "id": "12345",
-    "title":"Example Exam",
-    "description": "An example exam",
-    "author": {
-        "id": "67890",
-        "name": "Benjaminadk",
-        "image": "http://www.example.com/image.png"
+  "author": {
+    "id": "your-id-here",
+    "name": "Your Name",
+    "image": "https://example.com/your-photo.png"
+  },
+  "createdAt": "2025-08-28T16:12:25Z",
+  "title": "Untitled Exam",
+  "code": "000-000",
+  "time": 60,
+  "pass": 60,
+  "cover": [
+    {
+      "variant": 1,
+      "text": "Main Title (shows large)"
     },
-    "code": "123-abc",
-    "time": 60,
-    "pass": 75,
-    "image": "http://www.example.com/image.png",
-    "cover": [
-        {"variant": 2, "text": "Large Text"},
-        {"variant": 1, "text": "Normal Text"}
-    ],
-    "test": [
-        "variant": 0,
-        "question": [
-            {"variant": 1, "text": "Normal text"},
-            {"variant": 0, "text": "Image URL"}
-        ],
-        "choices": [
-            {"label": "A", "text": "Option A"},
-            {"label": "B", "text": "Option B"},
-            {"label": "C", "text": "Option C"},
-            {"label": "D", "text": "Option D"},
-        ],
-        "answer": [true, false, false, false],
-        "explanation": [
-            {"variant": 1, "text": "Normal text"},
-            {"variant": 0, "text": "Image URL"}
-        ]
-    ]
+    {
+      "variant": 0,
+      "text": "Subtitle or tagline"
+    },
+    {
+      "variant": 2,
+      "text": "Any extra cover line"
+    }
+  ],
+  "test": [
+    {
+      "variant": 1,
+      "question": [
+        {
+          "variant": 1,
+          "text": "Replace me with your first question?"
+        }
+      ],
+      "choices": [
+        {
+          "label": "A",
+          "text": "First choice"
+        },
+        {
+          "label": "B",
+          "text": "Second choice"
+        },
+        {
+          "label": "C",
+          "text": "Third choice"
+        },
+        {
+          "label": "D",
+          "text": "Fourth choice"
+        }
+      ],
+      "answer": [
+        true,
+        false,
+        false,
+        false
+      ],
+      "explanation": [
+        {
+          "variant": 1,
+          "text": "Explain why the correct answer(s) are correct."
+        }
+      ]
+    }
+  ]
 }
 ```
-{% endcode-tabs-item %}
-{% endcode-tabs %}
 
 
 
@@ -63,6 +90,7 @@ Exam files use the `.json` extension. _JSON_, or _JavaScript Object Notation_ is
 | **title** | exam title | `string` |
 | **description** | exam description | `string` |
 | **author** | exam author | `Author` |
+| **createdAt** | creation date | `Date` |
 | **code** | certification/exam code | `string` |
 | **pass** | minimum passing score percentage | `number`  |
 | **time** | time limit in minutes | `number` |
